@@ -1,10 +1,10 @@
 require 'test_helper'
-require 'smart_proxy_dns_plugin_template/dns_plugin_template_main'
+require 'smart_proxy_dns_netdot/dns_netdot_main'
 
 
-class DnsPluginTemplateRecordTest < Test::Unit::TestCase
+class DnsNetdotRecordTest < Test::Unit::TestCase
   def setup
-    @provider = Proxy::Dns::PluginTemplate::Record.new('required_value', 'a_value', '/required/path', '/some/path', 999)
+    @provider = Proxy::Dns::Netdot::Record.new('required_value', 'a_value', '/required/path', '/some/path', 999)
   end
 
   # Test that a missing :example_setting throws an error

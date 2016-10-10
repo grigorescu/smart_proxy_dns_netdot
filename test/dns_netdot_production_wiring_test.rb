@@ -1,11 +1,11 @@
 require 'test_helper'
-require 'smart_proxy_dns_plugin_template/dns_plugin_template_configuration'
-require 'smart_proxy_dns_plugin_template/dns_plugin_template_main'
+require 'smart_proxy_dns_netdot/dns_netdot_configuration'
+require 'smart_proxy_dns_netdot/dns_netdot_main'
 
-class DnsPluginTemplateProductionWiringTest < Test::Unit::TestCase
+class DnsNetdotProductionWiringTest < Test::Unit::TestCase
   def setup
     @container = ::Proxy::DependencyInjection::Container.new
-    @config = ::Proxy::Dns::PluginTemplate::PluginConfiguration.new
+    @config = ::Proxy::Dns::Netdot::PluginConfiguration.new
   end
 
   def test_dns_provider_initialization

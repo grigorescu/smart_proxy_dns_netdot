@@ -1,20 +1,15 @@
 require 'dns_common/dns_common'
 
-module Proxy::Dns::PluginTemplate
+module Proxy::Dns::Netdot
   class Record < ::Proxy::Dns::Record
     include Proxy::Log
 
-    attr_reader :example_setting, :optional_path, :required_setting, :required_path
+    attr_reader :netdot_server, :netdot_username, :netdot_password
 
-    def initialize(required_setting, example_setting, required_path, optional_path, dns_ttl)
-      @required_setting = required_setting # never nil
-      @example_setting = example_setting # can be nil
-      @required_path = required_path # file exists and is readable
-      @optional_path = optional_path # nil, or file exists and is readable
-
-      # Common settings can be defined by the main plugin, it's ok to use them locally.
-      # Please note that providers must not rely on settings defined by other providers or plugins they are not related to.
-      super('localhost', dns_ttl)
+    def initialize(netdot_server, netdot_username, netdot_password)
+      @required_setting = netdot_server
+      @required_setting = netdot_username
+      @required_setting = netdot_password
     end
 
     # Calls to these methods are guaranteed to have non-nil parameters
